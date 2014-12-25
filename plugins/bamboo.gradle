@@ -1,6 +1,6 @@
 
 task makePretty(type: Delete) {
-  delete 'output'
+  delete 'jars'
 }
 
 clean {
