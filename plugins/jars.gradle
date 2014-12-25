@@ -1,0 +1,27 @@
+
+task javadocJar(type: Jar, dependsOn: 'javadoc') {
+    from javadoc.destinationDir
+    destinationDir = file 'jars'
+}
+
+jar { 
+   	destinationDir = file 'jars'
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    destinationDir = file 'jars'
+    classifier = 'dev'
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.java
+    destinationDir = file 'jars'
+    classifier = 'src'
+}
+
+artifacts {
+    archives jar
+    archives sourcesJar
+    archives deobfJar
+}

@@ -1,0 +1,8 @@
+
+task makePretty(type: Delete) {
+  delete 'output'
+}
+
+clean {
+   dependsOn makePretty
+}

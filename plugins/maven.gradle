@@ -1,0 +1,75 @@
+// Load the config
+ext.gitFile = file "props/git.properties"
+gitFile.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    project.ext.gitConfig = new ConfigSlurper().parse prop
+}
+
+configurations {
+    compile
+    deployJars
+}
+
+// If on the jenkins system, append the build number to the jar name
+if (System.getenv().BUILD_NUMBER != null) {
+    version = version + "_build-" + System.getenv().BUILD_NUMBER
+}
+
+uploadArchives {    
+    repositories {
+        // publish using bamboo for a backup maven
+        if (hasProperty("bambooshortPlanName") && project.getProperty("bambooshortPlanName") == "cg-orig-master") {
+            maven {
+                url "file:///var/www/html/maven"
+            }
+        }
+        else
+        // official DDD maven stuffs
+        if (project.hasProperty("dddUser") && project.hasProperty("dddPass")) {
+            mavenDeployer {
+                repository(url: "http://doubledoordev.net:8081/artifactory/mods") {
+                    authentication(userName: dddUser, password: dddPass)
+                }
+                pom {
+                    groupId = project.group
+                    version = project.version
+                    artifactId = project.archivesBaseName
+                    project {
+                        name project.archivesBaseName
+                        packaging 'jar'
+                        description '${gitConfig.gitName}'
+                        url 'https://github.com/TheTemportalist/${gitConfig.gitName}'
+
+                        scm {
+                            url 'https://github.com/TheTemportalist/${gitConfig.gitName}'
+                            connection 'scm:git:git://github.com/TheTemportalist/${gitConfig.gitName}.git'
+                            developerConnection 'scm:git:git@github.com:TheTemportalist/${gitConfig.gitName}.git'
+                        }
+
+                        issueManagement {
+                            system 'github'
+                            url 'https://github.com/TheTemportalist/${gitConfig.gitName}/issues'
+                        }
+
+                        licenses {
+                            license {
+                                name '${gitConfig.license}'
+                                url 'https://github.com/TheTemportalist/${gitConfig.gitName}/blob/master/LICENSE'
+                                distribution 'repo'
+                            }
+                        }
+
+                        developers {
+                            developer {
+                                id 'TheCountryGamer'
+                                name 'TheCountryGamer'
+                                roles { role 'developer' }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
