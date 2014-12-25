@@ -1,6 +1,6 @@
 
 apply plugin: 'maven'
-apply plugin: 'mavenPublish'
+apply plugin: 'maven-publish'
 
 // Load the config
 ext.gitFile = file "props/git.properties"
