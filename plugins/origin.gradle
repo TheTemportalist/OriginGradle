@@ -1,6 +1,6 @@
 
 // Load the config for general stats
-ext.configFile = file "../Origin/Origin.properties"
+ext.configFile = file "./OriginGradle/Forge.properties"
 configFile.withReader {
     // Load config.  It shall from now be referenced as simply config or project.config
     def prop = new Properties()
