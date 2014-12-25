@@ -1,3 +1,7 @@
+
+apply plugin: 'maven'
+apply plugin: 'mavenPublish'
+
 // Load the config
 ext.gitFile = file "props/git.properties"
 gitFile.withReader {
