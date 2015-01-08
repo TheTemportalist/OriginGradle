@@ -1,7 +1,7 @@
 
 apply from: './OriginGradle/plugins/bamboo.gradle'
 apply from: './OriginGradle/plugins/project.gradle'
-apply from: './OriginGradle/plugins/origin.gradle'
+apply from: './OriginGradle/plugins/forge.gradle'
 apply from: './OriginGradle/plugins/maven.gradle'
 apply from: './OriginGradle/plugins/curse.gradle'
 apply from: './OriginGradle/plugins/jars.gradle'
