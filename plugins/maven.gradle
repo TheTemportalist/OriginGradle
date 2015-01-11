@@ -23,7 +23,7 @@ if (System.getenv().BUILD_NUMBER != null) {
 uploadArchives {    
     repositories {
         // publish using bamboo for a backup maven
-        if (project.getProperty("bambooshortPlanName") == "cg-orig-master") {
+        if (project.hasProperty("bambooshortPlanName") && project.getProperty("bambooshortPlanName") == "cg-orig-master") {
             maven {
                 url "file:///var/www/html/maven"
             }
