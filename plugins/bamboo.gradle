@@ -1,6 +1,4 @@
 
-if (!project.hasProperty("bambooshortPlanName")) project.bambooshortPlanName = "n/a"
-
 task makePretty(type: Delete) {
 	delete 'jars'
 }
