@@ -20,6 +20,9 @@ if (System.getenv().BUILD_NUMBER != null) {
     version = version + "_build-" + System.getenv().BUILD_NUMBER
 }
 
+if (!project.hasProperty("bambooshortPlanName"))
+    ext.bambooshortPlanName = ""
+
 uploadArchives {    
     repositories {
         // publish using bamboo for a backup maven
