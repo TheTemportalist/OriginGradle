@@ -4,10 +4,12 @@ repositories {
         name "DDD repo"
         url "http://doubledoordev.net/maven/"
     }
+    /*
     maven {
     	name "Shadowcity repo"
     	url "http://ci.builtbroken.com/maven/"
     }
+    */
 }
 
 dependencies {
@@ -15,11 +17,15 @@ dependencies {
 	//		"group:name:version"
 	//		"com.temportalist.origin:Origin:${config.minecraft_version}-4+:dev"
 
+<<<<<<< HEAD
 
 	// Primary Maven:
 	//compile group: "com.temportalist.origin", name: "Origin", version: "${config.minecraft_version}-4+:dev"
 	
 	// Secondary Maven:
 	//compile group: "com.temportalist.origin", name: "OR-MAS-JOB1", version: "${config.minecraft_version}-4+:dev"
+=======
+	compile group: "com.temportalist.origin", name: "Origin", version: "${config.minecraft_version}-4+:dev"
+>>>>>>> d799c20650af27e1b77ed877a52f6be4519e1c4e
 
 }
