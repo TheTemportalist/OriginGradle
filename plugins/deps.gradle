@@ -20,6 +20,6 @@ dependencies {
 	//compile group: "com.temportalist.origin", name: "Origin", version: "${config.minecraft_version}-4+:dev"
 	
 	// Secondary Maven:
-	compile group: "com.temportalist.origin", name: "OR-MAS-JOB1", version: "${config.minecraft_version}-4+:dev"
+	//compile group: "com.temportalist.origin", name: "OR-MAS-JOB1", version: "${config.minecraft_version}-4+:dev"
 
 }
