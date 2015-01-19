@@ -69,8 +69,8 @@ uploadArchives {
 
                         developers {
                             developer {
-                                id 'TheCountryGamer'
-                                name 'TheCountryGamer'
+                                id 'TheTemportalist'
+                                name 'TheTemportalist'
                                 roles { role 'developer' }
                             }
                         }
