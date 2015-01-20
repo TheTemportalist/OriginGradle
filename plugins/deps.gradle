@@ -17,6 +17,6 @@ dependencies {
 	//		"group:name:version"
 	//		"com.temportalist.origin:Origin:${config.minecraft_version}-4+:dev"
 
-	compile group: "com.temportalist.origin", name: "Origin", version: "${config.minecraft_version}-4+:dev"
+	compile group: "com.temportalist.origin", name: "Origin", version: "${config.minecraft_version}-4.0.1_build-147:dev"
 
 }
