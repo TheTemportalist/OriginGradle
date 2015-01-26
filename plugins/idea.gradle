@@ -1,0 +1,6 @@
+
+ideaModule {
+	def dir = System.getProperty("user.dir")
+	idea.module.outputDir = file(dir + "/idea/compiled")
+	idea.module.testOutputDir = file(dir + "/idea/test")
+}
