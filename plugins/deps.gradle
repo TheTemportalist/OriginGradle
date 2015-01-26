@@ -1,17 +1,17 @@
 
 repositories {
-    /*
+    ///*
     maven {
         name "DDD repo"
         url "http://doubledoordev.net/maven/"
     }
-    */
-    ///*
+    //*/
+    /*
     maven {
     	name "Shadowcity repo"
     	url "http://ci.builtbroken.com/maven/"
     }
-    //*/
+    */
 }
 
 dependencies {
