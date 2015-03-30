@@ -9,7 +9,7 @@ configFile.withReader {
 }
 
 minecraft {
-    mappings = 'stable_12'
+    //mappings = 'stable_12'
     // Make the mc version in the style of "1.7.10-10.13.0.1208"
     // Used to update forge locally
     version = "${config.minecraft_version}-${config.forge_version}"
