@@ -17,7 +17,7 @@ configurations {
 
 // If on the jenkins system, append the build number to the jar name
 if (System.getenv().BUILD_NUMBER != null) {
-    version = version + "_build-" + System.getenv().BUILD_NUMBER
+    version = version + "." + System.getenv().BUILD_NUMBER
 }
 
 if (!project.hasProperty("bambooshortPlanName"))
