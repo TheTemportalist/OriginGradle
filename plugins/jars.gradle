@@ -1,22 +1,22 @@
 
 task javadocJar(type: Jar, dependsOn: 'javadoc') {
     from javadoc.destinationDir
-    destinationDir = file 'jars'
+    destinationDir = file 'jar-builds'
 }
 
 jar { 
-   	destinationDir = file 'jars'
+   	destinationDir = file 'jar-builds'
 }
 
 task deobfJar(type: Jar) {
     from sourceSets.main.output
-    destinationDir = file 'jars'
+    destinationDir = file 'jar-builds'
     classifier = 'dev'
 }
 
 task sourcesJar(type: Jar) {
     from sourceSets.main.java
-    destinationDir = file 'jars'
+    destinationDir = file 'jar-builds'
     classifier = 'src'
 }
 
