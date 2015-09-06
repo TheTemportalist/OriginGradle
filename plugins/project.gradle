@@ -17,7 +17,7 @@ version = "${projectConfig.version}"
 minecraft {
 	// Replacements
     // the version replacement
-    replace "@PLUGIN_VERSION@", project.version
+    replace "@MOD_VERSION@", project.version
     // replacements go in the main file
     replaceIn "${projectConfig.mainFile}"
 }
