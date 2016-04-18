@@ -1,8 +1,0 @@
-
-task makePretty(type: Delete) {
-	delete 'jars'
-}
-
-clean {
-	dependsOn makePretty
-}
